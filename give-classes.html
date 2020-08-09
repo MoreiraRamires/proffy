@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="/styles/main.css">
 
   <link rel="stylesheet" href="/styles/partials/header.css">
+
+  <link rel="stylesheet" href="/styles/partials/forms.css">
   <link rel="stylesheet" href="/styles/partials/page-give-classes.css">
   <link
     href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap"
@@ -30,127 +32,108 @@
       <div class="header-content">
 
 
-        <strong>Veja os professores disponíveis</strong>
-
-        <form id="search-teachers" action="#">
-          <div class="select-block">
-
-            <label for="subject" id="subject">Matéria </label>
-
-            <select name="subject" id="subject">
-
-              <option value="" disabled="" hidden=""> Selecione uma opção</option>
-
-              <option value="1"> Artes</option>
-
-              <option value="2"> Biologia</option>
-
-              <option value="3"> Ciências</option>
-
-              <option value="4"> Educação Física</option>
-
-              <option value="5"> Física</option>
-
-              <option value="6"> Geografia</option>
-
-              <option value="7"> História</option>
-
-              <option value="8"> Matemática</option>
-
-              <option value="9"> Português</option>
-
-              <option value="10"> Química </option>
-
-            </select>
-
-          </div>
-
-          <div class="select-block">
-            <label for="weekday" id="weekday">Dia da Semana </label>
-
-            <select name="weekday" id="weekday">
-              <option value="" disabled="" hidden=""> Selecione uma opção</option>
-
-              <option value="0"> Domingo</option>
-              <option value="1"> Segunda-Feira</option>
-
-              <option value="2"> Terça-Feira</option>
-
-              <option value="3"> Quarta-Feira</option>
-
-              <option value="4"> Quinta-Feira</option>
-
-              <option value="5"> Sexta--Feira</option>
-
-              <option value="6"> Sábado</option>
-
-
-
-
-            </select>
-          </div>
-
-          <div class="input-block">
-            <label for="time"> Horas</label>
-            <input type="time">
-          </div>
-
-          <button type="submit">Filtrar</button>
-        </form>
+        <strong>Bem-vindo , professor.</strong>
+        <p>Preencha esse formulário, por favor.</p>
       </div>
-
-
-
     </header>
 
 
     <main>
-      <article class="teacher-item">
-        <header>
-          <img
-            src="https://avatars2.githubusercontent.com/u/2254731?s=460&amp;u=0ba16a79456c2f250e7579cb388fa18c5c2d7d65&amp;v=4"
-            alt="Diego Fernandes">
-          <div>
-            <strong>Diego Fernandes</strong>
-            <span>Química</span>
+
+      <form action="" id="create-class">
+
+        <fieldset>
+          <legend>Seus dados</legend>
+          <div class="input-block">
+            <label for="name"> Nome Completo</label>
+            <input name="name" id="name" required>
           </div>
-        </header>
-
-        <p>Entusiasta das melhores tecnologias de química avançada.<br><br>Apaixonado por explodir coisas em laboratório
-          e por mudar a vida das pessoas através de experiências. Mais de 200.000 pessoas já passaram por uma das minhas
-          explosões.</p>
-
-        <footer>
-          <p>Preço/hora<strong>R$ 20,00</strong>
-          </p>
-          <button type="button">
-            <img src="/images/icons/whatsapp.svg" alt="Whatsapp">Entrar em contato
-          </button>
-        </footer>
-      </article>
-      <article class="teacher-item">
-        <header>
-          <img
-            src="https://avatars2.githubusercontent.com/u/2254731?s=460&amp;u=0ba16a79456c2f250e7579cb388fa18c5c2d7d65&amp;v=4"
-            alt="Diego Fernandes">
-          <div>
-            <strong>Diego Fernandes</strong>
-            <span>Química</span>
+          <div class="input-block">
+            <label for="avatar">Sua foto</label> <small> (Link deve conter https://)</small>
+            <input name="avatar" id="avatar" type="url" required>
           </div>
-        </header>
 
-        <p>Entusiasta das melhores tecnologias de química avançada.<br><br>Apaixonado por explodir coisas em laboratório
-          e por mudar a vida das pessoas através de experiências. Mais de 200.000 pessoas já passaram por uma das minhas
-          explosões.</p>
 
-        <footer>
-          <p>Preço/hora<strong>R$ 20,00</strong>
-          </p>
-          <button type="button">
-            <img src="/images/icons/whatsapp.svg" alt="Whatsapp">Entrar em contato
-          </button>
-        </footer>
-      </article>
+          <div class="input-block">
+            <label for="whatsapp"> Seu Celular</label>
+            <input name="whatsapp" id="whatsapp" type="number" required>
+
+          </div>
+
+          <div class="textarea-block">
+            <label for="bio"> Biografia</label>
+            <textarea name="bio" id="bio" required></textarea>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Sobre a aula</legend>
+          <div class="select-block">
+            <label for="subject"> Matéria</label>
+            <select name="subject" id="subject" required>
+              <option value="">Selecione uma opção</option>
+              <option value="1"> Artes</option>
+              <option value="2"> Biologia</option>
+              <option value="3"> Ciências</option>
+              <option value="4"> Educação Física</option>
+              <option value="5"> Física</option>
+              <option value="6"> Geografia</option>
+              <option value="7"> História</option>
+              <option value="8"> Matemática</option>
+              <option value="9"> Português</option>
+              <option value="10"> Química </option>
+            </select>
+          </div>
+          <div class="input-block">
+            <label for="cost">Valor Hora/Aula <small> (em R$)</small></label>
+            <input type="cost" id="cost" type="number" required>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Horários disponíveis
+            <button id="add-time">+ Novo horário</button>
+          </legend>
+          <div class="schedule-item">
+            <div class="select-block">
+              <label for="weekday[]" id="weekday" required> Dia da Semana</label>
+              <select name="weekday" id="weekday">
+                <option value="" disabled="" hidden=""> Selecione uma opção</option>
+                <option value="0"> Domingo</option>
+                <option value="1"> Segunda-Feira</option>
+                <option value="2"> Terça-Feira</option>
+                <option value="3"> Quarta-Feira</option>
+                <option value="4"> Quinta-Feira</option>
+                <option value="5"> Sexta--Feira</option>
+                <option value="6"> Sábado</option>
+
+
+
+
+              </select>
+
+              <div class="input-block">
+                <label for="time_from"> Das </label>
+                <input type="time" name="time_from[]" required>
+              </div>
+
+              <div class="input-block">
+                <label for="time_to"> Até </label>
+                <input type="time" name="time_to[]" required>
+              </div>
+
+
+            </div>
+        </fieldset>
+
+      </form>
+      <footer>
+        <p>
+          <img src="/images/icons/warning.svg" alt="aviso importante" srcset=""> Importante!<br>
+          Preencha todos os dados.
+        </p>
+        <button type="submit" form="create-class">Salvar Cadastro</button>
+      </footer>
     </main>
   </div>
 </body>
