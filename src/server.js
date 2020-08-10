@@ -40,11 +40,9 @@ const express = require('express')
 const server = express()
 
 
-server.use(express.static("public"))
+server
+  .use(express.static("public"))
   .get("/", pageLanding)
   .get("/study", pageStudy)
   .get("/give-classes", pageGiveClasses)
-
-
-
   .listen(5000)
