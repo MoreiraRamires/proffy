@@ -1,3 +1,5 @@
+
+// Dados
 const proffys = [
   //Rafael
   {
@@ -39,17 +41,64 @@ const proffys = [
   }
 
 ]
+const subjects = [
+  "Artes",
+  "Biologia",
+  "Ciências",
+  "Educação Física",
+  "Física",
+  "Geografia",
+  "História",
+  "Matemática",
+  "Português",
+  "Química",
+
+]
+const weekdays = [
+  "Domingo",
+  "Segunda-Feira",
+  "Terça-Feira",
+  "Quarta-Feira",
+  "Quinta-Feira",
+  "Sexta-Feira",
+  "Sábado",
+]
+
+// funcionalidades
+function getSubject(subjectNumber) {
+  const position = +subjectNumber - 1
+  return subjects[position]
+}
+
 
 function pageLanding(req, res) {
   return res.render("index.html")
 }
 function pageStudy(req, res) {
-  return res.render("study.html", { proffys })
+  console.log(req.query)
+  const filters = req.query
+  return res.render("study.html", { proffys, filters, subjects, weekdays })
 }
 function pageGiveClasses(req, res) {
-  return res.render("give-classes.html")
+  const data = req.query
+  const isNotEmpity = Object.keys(data).length > 0
+
+  //se tiver dados 
+  if (isNotEmpity) {
+
+    data.subject = getSubject(data.subject)
+    //adicionar a lista de proffys
+    proffys.push(data)
+
+    return res.redirect("/study")
+  }
+
+  // se nao tiver dados redirecionar para 
+
+  return res.render("give-classes.html", { subjects, weekdays })
 }
 
+// serviddor
 const express = require('express')
 const server = express()
 
