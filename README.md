@@ -15,7 +15,7 @@ Esta aplicação fornece tudo o que é necessário para organizar as aulas entre
 Os professores podem escolher o melhor horário disponível para eles.
 
 Os alunos podem ver todos os professores disponíveis, filtrando por dia da semana, horário e matéria.
-#### A aplicação foi criada seguindo a videoaula [Recriando a Interface do Discord com ReactJS | UI Clone #5](https://www.youtube.com/watch?v=x4FdZd2-_uU) disponíbilizada pela Rocketseat.
+
   
 
 ## 🛠 Tecnologias
