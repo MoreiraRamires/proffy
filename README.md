@@ -1,9 +1,10 @@
 <h1 align="center">
-    <img alt="Discord" title="Interface do Discord com ReactJS" src="./assets/banner.png" />
+    <img alt="Proffy" title="Proffy
+" src="./assets/banner.png" />
 </h1>
 
 <h4 align="center"> 
-	Interface do Discord com ReactJS
+	Proffy
 </h4>
 
 <p align="center">
